@@ -10,7 +10,7 @@ import SearchScreen from "../../Screen/SearchScreen/SearchScreen";
 
 /**
  * The BottomNavigation component is a custom bottom navigation bar that renders three tabs:
- * Home, Learn, and Market.
+ * Home,  and Search.
  *
  * This component uses the `createBottomTabNavigator` function from the `@react-navigation/bottom-tabs`
  * package to create the tab navigation bar. The `CustomBottomTabBar` component is used as the
