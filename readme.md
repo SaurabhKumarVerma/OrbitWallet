@@ -1,9 +1,7 @@
 ## Clone project
 
-```bash
 - [Github Project Link](https://github.com/SaurabhKumarVerma/OrbitWallet)
-cd OrbitWallet
-```
+  cd OrbitWallet
 
 ## Step 1: Install dependencies
 
@@ -34,6 +32,10 @@ yarn android
 cd ios
 pod install
 
+# using npm
+npm run ios
+
+# OR using Yarn
 yarn ios
 ```
 
