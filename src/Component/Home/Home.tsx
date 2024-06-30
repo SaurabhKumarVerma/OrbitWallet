@@ -5,7 +5,7 @@ import {
   ActivityIndicator,
   StyleSheet,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Reels from "./Reels";
 import { CONSTANT_HEIGHT } from "../../Constant/height";
 import { STATUSBAR_HEIGHT } from "../../Utils/statusbarHeight";
@@ -50,7 +50,7 @@ const Home = () => {
       });
   };
 
-  const renderItem = (item: IReelsData) => {
+  const renderItem = useCallback((item: IReelsData) => {
     return (
       <View>
         <Reels
@@ -59,7 +59,7 @@ const Home = () => {
         />
       </View>
     );
-  };
+  }, []);
 
   const renderFooter = () => {
     return (
@@ -97,26 +97,29 @@ const Home = () => {
           <ActivityIndicator color={"green"} />
         </View>
       ) : null}
-      <FlatList
-        data={reelsList}
-        style={{
-          height: itemHeight,
-        }}
-        renderItem={({ item }) => renderItem(item)}
-        keyExtractor={(item, index) => item.id}
-        pagingEnabled
-        showsVerticalScrollIndicator={false}
-        removeClippedSubviews
-        decelerationRate={"fast"}
-        getItemLayout={(_, index) => ({
-          length: itemHeight,
-          offset: itemHeight * index,
-          index,
-        })}
-        ListFooterComponent={renderFooter}
-        onEndReachedThreshold={0.2}
-        onEndReached={fetchMoreData}
-      />
+
+      {reelsList?.length ? (
+        <FlatList
+          data={reelsList}
+          style={{
+            height: itemHeight,
+          }}
+          renderItem={({ item }) => renderItem(item)}
+          keyExtractor={(item, index) => item.id}
+          pagingEnabled
+          showsVerticalScrollIndicator={false}
+          removeClippedSubviews
+          decelerationRate={"fast"}
+          getItemLayout={(_, index) => ({
+            length: itemHeight,
+            offset: itemHeight * index,
+            index,
+          })}
+          ListFooterComponent={renderFooter}
+          onEndReachedThreshold={0.2}
+          onEndReached={fetchMoreData}
+        />
+      ) : null}
     </View>
   );
 };
