@@ -118,6 +118,12 @@ const Home = () => {
           ListFooterComponent={renderFooter}
           onEndReachedThreshold={0.2}
           onEndReached={fetchMoreData}
+          initialNumToRender={1}
+          viewabilityConfig={{
+            waitForInteraction: true,
+            itemVisiblePercentThreshold: 50,
+            minimumViewTime: 1000,
+          }}
         />
       ) : null}
     </View>
