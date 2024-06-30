@@ -1,34 +1,35 @@
 /**
 
-This file imports and exports custom font configurations for the Fira Code font family.
-It defines a customFont object that contains the imported font weights and a typography object that uses these fonts. */
+This file imports and exports custom font configurations for the Roboto Code font family.
+It defines a customFont object that contains the imported font weights and a typography object that uses these fonts. 
+*/
 
 import {
-  FiraCode_300Light as FiraLight,
-  FiraCode_400Regular as FiraRegular,
-  FiraCode_500Medium as FiraMedium,
-  FiraCode_600SemiBold as FiraSemiBold,
-  FiraCode_700Bold as FiraBold,
-} from "@expo-google-fonts/fira-code";
+  Roboto_300Light as RobotoLight,
+  Roboto_400Regular as RobotoRegular,
+  Roboto_500Medium as RobotoMedium,
+  Roboto_700Bold as RobotoSemiBold,
+  Roboto_900Black as RobotoBold,
+} from "@expo-google-fonts/roboto";
 
 export const customFont = {
-  FiraLight,
-  FiraRegular,
-  FiraMedium,
-  FiraSemiBold,
-  FiraBold,
+  RobotoLight,
+  RobotoRegular,
+  RobotoMedium,
+  RobotoSemiBold,
+  RobotoBold,
 };
 
 const fonts = {
-  firaFonts: {
-    light: "FiraLight",
-    normal: "FiraRegular",
-    medium: "FiraMedium",
-    semiBold: "FiraSemiBold",
-    bold: "FiraBold",
+  robotoFonts: {
+    light: "RobotoLight",
+    normal: "RobotoRegular",
+    medium: "RobotoMedium",
+    semiBold: "RobotoSemiBold",
+    bold: "RobotoBold",
   },
 };
 
 export const typography = {
-  primary: fonts.firaFonts,
+  primary: fonts.robotoFonts,
 };

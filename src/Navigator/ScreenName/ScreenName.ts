@@ -1,4 +1,4 @@
 export enum SCREEN_NAME {
-  HOME = "Home",
+  HOME = "Feed",
   SEARCH = "Search",
 }

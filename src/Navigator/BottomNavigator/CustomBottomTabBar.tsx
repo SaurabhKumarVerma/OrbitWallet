@@ -5,6 +5,7 @@ import BottomIcon from "./BottomIcon";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { LinearGradient } from "expo-linear-gradient";
 import { colors } from "../../Theme/colors";
+import { CONSTANT_HEIGHT } from "../../Constant/height";
 
 /**
  * The CustomBottomTabBar component is a custom tab bar that displays three tabs with the respective icons
@@ -27,8 +28,8 @@ const CustomBottomTabBar = ({
   return (
     <LinearGradient
       colors={colors.lightBlueGradientColor}
-      start={{ x: 1, y: 1 }}
-      end={{ x: 1, y: -1 }}
+      start={{ x: 1, y: -0.6 }}
+      end={{ x: 1, y: 0.6 }}
       style={[styles.container, { width: width, bottom: MARGIN }]}
     >
       {state.routes.map((route, index) => {
@@ -65,11 +66,11 @@ const CustomBottomTabBar = ({
             onLongPress={onLongPress}
             style={{
               flex: 1,
-              paddingVertical: 10,
+              paddingBottom: 10,
             }}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           >
-            <View style={[styles.content, { borderRadius: 24 }]}>
+            <View style={[styles.content]}>
               <BottomIcon
                 isFocused={isFocused}
                 routeName={route.name}
@@ -88,9 +89,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     flex: 1,
-    backgroundColor: "#FFFFFF",
     position: "absolute",
-    height: 80,
+    height: CONSTANT_HEIGHT,
     alignSelf: "center",
     justifyContent: "space-around",
     alignItems: "center",
@@ -104,6 +104,5 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 10,
   },
 });

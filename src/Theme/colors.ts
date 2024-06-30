@@ -16,6 +16,6 @@ export const colors = {
   aquamarine: "#4fafb0",
   transparent: "transparent",
   columbiaBlue: "#B9D9EB",
-  lightBlueGradientColor: ["#F0F8FF", "#B9D9EB", "#FFFFFF"],
+  lightBlueGradientColor: ["#B9D9EB", "#B9D9EB", "#B9D9EB", "#FFFFFF"],
   aquamarineDark: "#00C684",
 };

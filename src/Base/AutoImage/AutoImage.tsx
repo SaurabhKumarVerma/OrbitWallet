@@ -72,9 +72,6 @@ export function AutoImage(props: AutoImageProps) {
   const { maxWidth, maxHeight, ...ImageProps } = props;
   const source = props.source as ImageURISource;
 
-  const [isLoading, setLoading] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<boolean>(false);
-
   const [width, height] = useAutoImage(
     Platform.select({
       web: (source?.uri as string) ?? (source as string),
@@ -83,31 +80,9 @@ export function AutoImage(props: AutoImageProps) {
     [maxWidth, maxHeight]
   );
 
-  const onLoadStart = () => {
-    setLoading(true);
-    setErrorMessage(false);
-  };
-
-  const onLoadEnd = () => {
-    setLoading(false);
-  };
-
-  const onError = () => {
-    setLoading(false);
-    setErrorMessage(true);
-  };
-
   return (
     <>
-      <FastImage
-        {...ImageProps}
-        onError={onError}
-        onLoadEnd={onLoadEnd}
-        onLoadStart={onLoadStart}
-        style={[{ width, height }, props.style]}
-      />
-
-      {isLoading && <ActivityIndicator size={"small"} />}
+      <FastImage {...ImageProps} style={[{ width, height }, props.style]} />
     </>
   );
 }

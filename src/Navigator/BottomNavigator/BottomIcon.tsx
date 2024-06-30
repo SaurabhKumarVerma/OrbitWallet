@@ -3,6 +3,7 @@ import React from "react";
 import { colors } from "../../Theme/colors";
 import IconButton from "../../Base/Icons/Icons";
 import CustomText from "../../Base/Text/CustomText";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 interface IBottomIcon {
   isFocused: boolean;
   routeName: string;
@@ -19,6 +20,7 @@ interface IBottomIcon {
  */
 
 const BottomIcon = (props: IBottomIcon) => {
+  const insets = useSafeAreaInsets();
   const routeMap = {
     Home: "home",
     Search: "search",
@@ -35,21 +37,14 @@ const BottomIcon = (props: IBottomIcon) => {
       <View
         style={[
           styles.container,
-          {
-            backgroundColor: props.isFocused
-              ? colors.black
-              : colors.transparent,
-          },
+          { paddingBottom: insets.bottom, paddingTop: insets.top },
         ]}
       >
         <IconButton
           icon={routeName(props.routeName)}
-          size={"medium"}
-          iconColor={props.isFocused ? colors.white : colors.black}
+          size={"big"}
+          iconColor={colors.black}
         />
-      </View>
-
-      <View>
         <CustomText
           preset="formLabel"
           style={[styles.routeNameStyle, { color: colors.black }]}
@@ -63,29 +58,14 @@ const BottomIcon = (props: IBottomIcon) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 24,
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
     zIndex: 1,
+    alignItems: "center",
   },
   routeNameStyle: {
     color: colors.black,
     fontSize: 14,
     fontWeight: "500",
     overflow: "hidden",
-    paddingTop: 2,
-  },
-  routeNameContainer: {
-    backgroundColor: "grey",
-    marginLeft: -20,
-    overflow: "hidden",
-    borderTopLeftRadius: 3,
-    borderBottomLeftRadius: 3,
-    borderTopRightRadius: 14,
-    borderBottomRightRadius: 14,
-    borderTopColor: "transparent",
   },
   iconContainer: {
     justifyContent: "center",

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Pressable, StyleProp, ViewStyle, StyleSheet } from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { colors } from "../../Theme/colors";
 
@@ -29,11 +30,12 @@ const ICON_LIBRARIES: IconLibrary = {
   Feather: () => Feather,
   FontAwesome: () => FontAwesome,
   IonIcons: () => Ionicons,
+  FontAwesome5: () => FontAwesome5,
 };
 
 export type IconButtonProps = {
   icon: string;
-  iconFamily?: "Feather" | "FontAwesome" | "Ionicons";
+  iconFamily?: "Feather" | "FontAwesome" | "Ionicons" | "FontAwesome5";
   variant?: "text" | "contained" | "outline";
   size?: "small" | "medium" | "big";
   iconColor?: string;

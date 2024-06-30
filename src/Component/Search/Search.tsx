@@ -33,9 +33,9 @@ const Search = () => {
         <Card
           imageSource={{ uri: item?.uri }}
           type={ECARDTYPE.COMMUNITY}
-          countryName={item?.countryName}
-          message={item?.message}
-          totalPostTagNumber={item?.totalPostTagNumber}
+          countryName={"countryName" in item ? item?.countryName : ''}
+          message={"message" in item ? item?.message : ''}
+          totalPostTagNumber={"totalPostTagNumber" in item ? item?.totalPostTagNumber : 0 as number}
         />
       );
     } else if (title === ECARDTYPE.HASHTAG) {
@@ -43,8 +43,8 @@ const Search = () => {
         <Card
           imageSource={{ uri: item.uri }}
           type={ECARDTYPE.HASHTAG}
-          hashtagText={item?.hashtagText}
-          totalViews={item?.totalViews}
+          hashtagText={"hashtagText" in item ? item?.hashtagText : ''}
+          totalViews={"totalViews" in item ? item?.totalViews : 0 as number}
         />
       );
     } else if (title === ECARDTYPE.NOMADS) {
@@ -52,8 +52,8 @@ const Search = () => {
         <View style={{ marginHorizontal: 10 }}>
           <NomadsCard
             imageSource={{ uri: item.uri }}
-            nomadsFollowers={item?.followerCount}
-            nomadsName={item?.nomadsName}
+            nomadsFollowers={"followerCount" in item ? item?.followerCount : 0 as number}
+            nomadsName={"nomadsName" in item ? item?.nomadsName : 'anonymous' as string}
           />
         </View>
       );

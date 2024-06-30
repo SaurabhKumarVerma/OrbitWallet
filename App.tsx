@@ -22,7 +22,7 @@ export default function App() {
       <NavigationContainer theme={appTheme}>
         <BottomNavigator />
       </NavigationContainer>
-      <StatusBar style="auto" />
+      <StatusBar hidden />
     </GestureHandlerRootView>
   );
 }

@@ -18,8 +18,8 @@ import { formatNumber } from "../../Utils/suffix";
 
 interface INomadsCard {
   imageSource: ImageSourcePropType;
-  nomadsName: string;
-  nomadsFollowers: number;
+  nomadsName: string | undefined;
+  nomadsFollowers: number | undefined;
 }
 
 const NomadsCard = (props: INomadsCard) => {

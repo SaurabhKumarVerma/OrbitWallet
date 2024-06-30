@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React from "react";
 import SearchBar from "./SearchBar";
 import TopSearch from "./TopSearch";
@@ -6,7 +6,7 @@ import TopSearch from "./TopSearch";
 const SearchBarHeader = () => {
   return (
     <View>
-      <View style={{ marginHorizontal: 30, marginTop: 30 }}>
+      <View style={styles.container}>
         <SearchBar />
       </View>
       <View
@@ -23,4 +23,9 @@ const SearchBarHeader = () => {
 
 export default SearchBarHeader;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 30,
+    marginTop: 30,
+  },
+});

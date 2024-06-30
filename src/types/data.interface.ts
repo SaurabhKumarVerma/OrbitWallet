@@ -27,3 +27,10 @@ export interface ITopNomadsData {
   nomadsName: string;
   followerCount: number;
 }
+
+export interface IReelsData {
+  id: string;
+  author: string;
+  url: string;
+  download_url: string
+}

@@ -1,14 +1,13 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import React from "react";
 import Card from "../../Base/Card/Card";
-import { images } from "../../../assets/images/images";
 import { ECARDTYPE } from "../../types/types";
 
 const TopSearch = () => {
   return (
     <View style={{}}>
       <Card
-        imageSource={images.test}
+        imageSource={{ uri: "https://picsum.photos/id/144/2448/2448" }}
         hashtagText="Top search of the day"
         type={ECARDTYPE.FULL_WIDTH}
       />
@@ -17,5 +16,3 @@ const TopSearch = () => {
 };
 
 export default TopSearch;
-
-const styles = StyleSheet.create({});
