@@ -1,7 +1,11 @@
 ## Clone project
 
 - [Github Project Link](https://github.com/SaurabhKumarVerma/OrbitWallet)
-  cd OrbitWallet
+  <br>
+
+```bash
+ cd OrbitWallet
+```
 
 ## Step 1: Install dependencies
 
